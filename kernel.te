@@ -6,6 +6,3 @@ allow kernel block_device:blk_file rw_file_perms;
 allow kernel kernel:capability mknod;
 allow kernel self:socket create_socket_perms_no_ioctl;
 allow kernel self:capability { mknod };
-
-# Access firmware_file
-r_dir_file(kernel, firmware_file)

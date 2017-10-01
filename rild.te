@@ -19,13 +19,11 @@ allowxperm rild self:socket ioctl msm_sock_ipc_ioctls;
 
 allow rild sysfs_pronto:file r_file_perms;
 allow rild { audioserver_service mediaserver_service }:service_manager find;
-allow rild system_health_monitor_device:chr_file r_file_perms;
 
 allow rild vendor_file:file lock;
 
 rw_dir_file(rild, powerhal_socket)
 r_dir_file(rild, sysfs_socinfo)
 r_dir_file(rild, sysfs_subsys)
-r_dir_file(rild, sysfs_ssr)
 r_dir_file(rild, netmgrd)
 

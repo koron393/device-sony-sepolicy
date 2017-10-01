@@ -7,7 +7,6 @@ allow init proc_kernel_sched:file write;
 
 allow init {
     adsprpcd_file
-    persist_file
 }:dir mounton;
 
 allow init debugfs:file w_file_perms;
@@ -18,8 +17,6 @@ allow init kernel:system module_request;
 # configFS
 allow init configfs:file write;
 allow init configfs:lnk_file { create unlink };
-
-allow init ipa_dev:chr_file { open write };
 
 # BT
 allow init hci_attach_dev:chr_file rw_file_perms;

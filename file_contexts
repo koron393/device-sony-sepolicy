@@ -1,60 +1,19 @@
 ###################################
 # Dev nodes
 #
-/dev/adsprpc-smd                                u:object_r:qdsp_device:s0
 /dev/brcm_bt_drv                                u:object_r:hci_attach_dev:s0
-/dev/btpower                                    u:object_r:btpower_device:s0
-/dev/cpu_dma_latency                            u:object_r:device_latency:s0
-/dev/diag                                       u:object_r:diag_device:s0
-/dev/kgsl-3d0                                   u:object_r:gpu_device:s0
-/dev/msm_.*                                     u:object_r:audio_device:s0
-/dev/msm_dsps                                   u:object_r:sensors_device:s0
-/dev/msm_thermal_query                          u:object_r:thermal_device:s0
-/dev/qseecom                                    u:object_r:tee_device:s0
-/dev/radio0                                     u:object_r:fm_radio_device:s0
-/dev/rtc0                                       u:object_r:rtc_device:s0
-/dev/sensors                                    u:object_r:sensors_device:s0
-/dev/smd.*                                      u:object_r:smd_device:s0
-/dev/smem_log                                   u:object_r:smem_log_device:s0
-/dev/ttyHSL0                                    u:object_r:console_device:s0
-/dev/ttyHS[0-9]*                                u:object_r:serial_device:s0
-/dev/media([0-9])+                              u:object_r:video_device:s0
-/dev/jpeg[0-9]*                                 u:object_r:video_device:s0
-/dev/v4l-subdev.*                               u:object_r:video_device:s0
 /dev/video.*                                    u:object_r:video_device:s0
-/dev/ramdump_.*                                 u:object_r:ramdump_device:s0
-/dev/ipa                                        u:object_r:ipa_dev:s0
-/dev/wwan_ioctl                                 u:object_r:ipa_dev:s0
-/dev/ipaNatTable                                u:object_r:ipa_dev:s0
-/dev/rmnet_ctrl.*                               u:object_r:rmnet_device:s0
-/dev/dpl_ctrl                                   u:object_r:rmnet_device:s0
-/dev/pta                                        u:object_r:pta_device:s0
 /dev/voice_svc                                  u:object_r:voice_device:s0
-/dev/avtimer                                    u:object_r:avtimer_device:s0
 /dev/sg[0-9]+                                   u:object_r:sg_device:s0
-/dev/system_health_monitor                      u:object_r:system_health_monitor_device:s0
-/dev/qce                                        u:object_r:qce_device:s0
-/dev/msm-rng                                    u:object_r:rng_device:s0
 /dev/pn54x                                      u:object_r:nfc_device:s0
 /dev/subsys_modem                               u:object_r:subsys_modem_device:s0
 /dev/tfa98xx                                    u:object_r:audio_device:s0
 /dev/ttyHS0                                     u:object_r:hci_attach_dev:s0
-/dev/ttyMSM0                                    u:object_r:serial_device:s0
 
 ###################################
 # Dev socket nodes
 #
-/dev/socket/msm_irqbalance                      u:object_r:msm_irqbalance_socket:s0
-/dev/socket/netmgr(/.*)?                        u:object_r:netmgrd_socket:s0
 /dev/socket/powerhal(/.*)?                      u:object_r:powerhal_socket:s0
-/dev/socket/qmux_audio(/.*)?                    u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_bluetooth(/.*)?                u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_gps(/.*)?                      u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_radio(/.*)?                    u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_nfc(/.*)?                      u:object_r:qmuxd_socket:s0
-/dev/socket/rild2                               u:object_r:rild_socket:s0
-/dev/socket/rild-debug2                         u:object_r:rild_debug_socket:s0
-/dev/socket/sensor_ctl_socket                   u:object_r:sensors_socket:s0
 /dev/socket/tad                                 u:object_r:tad_socket:s0
 
 ###################################
@@ -86,32 +45,13 @@
 ###################################
 # sysfs files
 #
-/sys/class/thermal(/.*)?                                            u:object_r:sysfs_thermal:s0
 /sys/class/uio(/.*)?                                                u:object_r:sysfs_uio:s0
 /sys/devices/system/cpu/cpu0/rq-stats/*                             u:object_r:sysfs_rqstats:s0
-/sys/devices/virtual/graphics/fb([0-2])+/idle_time                  u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-2])+/mode(/.*)?                 u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-2])+/product_description        u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-2])+/vendor_name                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-2])+/mdp/caps                   u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/smdpkt/smdcntl1[0-9]/open_timeout              u:object_r:sysfs_smd_open_timeout:s0
-/sys/devices/virtual/smdpkt/smdcntl[0-9]/open_timeout               u:object_r:sysfs_smd_open_timeout:s0
-/sys/devices/virtual/thermal(/.*)?                                  u:object_r:sysfs_thermal:s0
-/sys/module/msm_thermal(/.*)?                                       u:object_r:sysfs_thermal:s0
-/sys/module/msm_thermal/core_control/cpus_offlined                  u:object_r:sysfs_mpdecision:s0
-/sys/devices/virtual/graphics/fb([0-2])+/hpd                        u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-2])+/res_info                   u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-2])+/s3d_mode                   u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-2])+/mdp/caps                             u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-2])+/ad                                   u:object_r:sysfs_graphics:s0
 /sys/devices/soc/(1a00000|900000)\.qcom,mdss_mdp/caps               u:object_r:sysfs_graphics:s0
-/sys/bus/msm_subsys(/.*)?                                           u:object_r:sysfs_ssr:s0
-/sys/bus/msm_subsys/devices/subsys0/restart_level                   u:object_r:sysfs_ssr_toggle:s0
-/sys/bus/msm_subsys/devices/subsys1/restart_level                   u:object_r:sysfs_ssr_toggle:s0
-/sys/bus/msm_subsys/devices/subsys2/restart_level                   u:object_r:sysfs_ssr_toggle:s0
-/sys/bus/msm_subsys/devices/subsys3/restart_level                   u:object_r:sysfs_ssr_toggle:s0
-/sys/bus/msm_subsys/devices/subsys4/restart_level                   u:object_r:sysfs_ssr_toggle:s0
-/sys/devices/soc0(/.*)?                                             u:object_r:sysfs_socinfo:s0
 
 # Fingerprint Kitakami
 /sys/bus/spi/devices/spi0\.1/clk_enable                                             u:object_r:sysfs_fingerprintd_writable:s0
@@ -132,9 +72,7 @@
 /sys/devices(/soc\.0|/soc)?/fpc1145\.105/irq                                        u:object_r:sysfs_fingerprintd_writable:s0
 
 # Modules
-/sys/module/cpu_boost(/.*)?                                                         u:object_r:sysfs_devices_system_cpu:s0
 /sys/module/lpm_levels/parameters/sleep_disabled                                    u:object_r:sysfs_power_management:s0
-/sys/module/msm_performance(/.*)?                                                   u:object_r:sysfs_performance:s0
 
 # Bluetooth
 /sys/devices(/soc\.0|/soc)?/bluesleep\.(81|89)/rfkill/rfkill0/state                 u:object_r:sysfs_bluetooth_writable:s0
@@ -192,28 +130,10 @@
 ###################################
 # data files
 #
-/data/misc/sensors(/.*)?                                            u:object_r:sensors_data_file:s0
-/data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/vendor/nfc(/.*)?                                              u:object_r:nfc_data_file:s0
-/data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
-/data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
 /data/misc/netmgr(/.*)?                                             u:object_r:netmgr_data_file:s0
-/data/misc/radio(/.*)?                                              u:object_r:radio_data_file:s0
-/data/misc/fm(/.*)?                                                 u:object_r:fm_data_file:s0
 /data/audio/acdbdata(/.*)?                                          u:object_r:acdb_data_file:s0
 /data/time(/.*)?                                                    u:object_r:timekeep_data_file:s0
-
-###################################
-# persist files
-#
-/persist(/.*)?                                                      u:object_r:persist_file:s0
-/persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
-/persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
-/persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
-/persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
-/persist/hlos_rfs(/.*)?                                             u:object_r:rfs_shared_hlos_file:s0
-/persist/display(/.*)?                                              u:object_r:persist_display_file:s0
-/persist/rfs.*                                                      u:object_r:rfs_file:s0
 
 ###################################
 # proc files
@@ -221,8 +141,3 @@
 /proc/bluetooth/sleep/proto                                         u:object_r:sysfs_bluetooth_writable:s0
 /proc/bluetooth/sleep/lpm                                           u:object_r:sysfs_bluetooth_writable:s0
 /proc/bluetooth/sleep/btwrite                                       u:object_r:sysfs_bluetooth_writable:s0
-
-###################################
-# adsp files
-#
-/dsp(/.*)?                                                          u:object_r:adsprpcd_file:s0
